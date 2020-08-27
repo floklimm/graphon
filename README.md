@@ -1,7 +1,7 @@
 # graphon
 Matlab library for community detection in graphons
 
-This code accompanies the paper "Modularity maximisation for community detection in graphons" by Florian Klimm, Nick. S. Jones, and Michael T. Schaub.
+This code accompanies the paper "Modularity maximisation for community detection in graphons" by Florian Klimm, Nick S. Jones, and Michael T. Schaub.
 
 ## Prerequisites
 - Matlab (tested for version R2020a)
@@ -13,7 +13,7 @@ This code accompanies the paper "Modularity maximisation for community detection
 ### Matlab
 The code in the library allows you to construct synthetic graphons and use a modularity-maximisation algorithm to obtain community structure in them. It also has some examples of graphons estimated from empirical network data.
 
-To reproduce the figures in the manuscript, see folder *paperReproduction*
+To reproduce the figures in the manuscript, see folder *paperReproduction* `<addr>`
 
 The code to construct synthetic graphons is available in *graphonConstruction*
 
