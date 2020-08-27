@@ -9,17 +9,18 @@ You can find a preprint of this paper on arXiv.
 - Matlab (tested for version R2020a)
 - [GenLouvain](https://github.com/GenLouvain/GenLouvain) for community detection (tested for version 2.2)
 
-
 ## How-to
 
 ### Matlab
 The code in the library allows you to construct synthetic graphons and use a modularity-maximisation algorithm to detect community structure in them. It also has some examples of graphons estimated from empirical network data.
 
-To reproduce the figures in the manuscript, see folder `/matlab/paperReproduction`
+To reproduce the figures in the manuscript, see folder `/matlab/paperReproduction`.
 
-The code to construct synthetic graphons is available in `/matlab/graphonConstruction`
+The code to construct synthetic graphons is available in `/matlab/graphonConstruction`.
 
-Some helper functions (e.g., for plotting) are under `/matlab/helperFunctions`
+Different graphon metrics are available under `/matlab/graphonFunctions`.
+
+Some helper functions (e.g., for plotting) are under `/matlab/helperFunctions`.
 
 ### Mathematica
 
