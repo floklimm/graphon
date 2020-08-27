@@ -17,4 +17,8 @@ To reproduce the figures in the manuscript, see folder *paperReproduction*
 
 The code to construct synthetic graphons is available in *graphonConstruction*
 
+Some helper functions (e.g., for plotting) are under *helperFunctions*
+
 ### Mathematica
+
+The Mathematica notebooks demonstrate how sliver optimisation can be used to derive analytical (or pseudo-analytical) expressions of the optimal community structure for some synthetic graphons.
