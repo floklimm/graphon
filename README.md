@@ -8,7 +8,7 @@ You can find a preprint of this paper on arXiv.
 ## Prerequisites
 - Matlab (tested for version R2020a)
 - [GenLouvain](https://github.com/GenLouvain/GenLouvain) for community detection (tested for version 2.2)
-- (deconvtv for sort-and-smooth graphon estimation from [SAS](https://github.com/airoldilab/SAS))
+- Non-essential: (deconvtv for sort-and-smooth graphon estimation from [SAS](https://github.com/airoldilab/SAS))
 
 ## How-to
 
