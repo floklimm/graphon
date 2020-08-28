@@ -5,6 +5,9 @@ This code accompanies the paper "Modularity maximisation for community detection
 
 You can find a preprint of this paper on arXiv.
 
+
+![image info](./matlab/paperReproduction/figures/fig3_lambdaGraphon.pdf)
+
 ## Prerequisites
 - Matlab (tested for version R2020a)
 - [GenLouvain](https://github.com/GenLouvain/GenLouvain) for community detection (tested for version 2.2)
