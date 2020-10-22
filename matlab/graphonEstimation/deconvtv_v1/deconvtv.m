@@ -66,8 +66,12 @@ if ~isnumeric(mu)
 end
 
 [rows cols frames] = size(g);
-memory_condition = memory;
-max_array_memory = memory_condition.MaxPossibleArrayBytes/16;
+
+% this doesn't work on Mac, so we choose this manually
+%memory_condition = memory;
+%max_array_memory = memory_condition.MaxPossibleArrayBytes/16;
+max_array_memory= 6.2927e+07;
+
 if rows*cols*frames>0.1*max_array_memory
     fprintf('Warning: possible memory issue \n');
     reply = input('Do you want to continue? [y/n]: ', 's');
