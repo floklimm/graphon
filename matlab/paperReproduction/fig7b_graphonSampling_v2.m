@@ -1,12 +1,13 @@
 % community detection in graphons that are SBM-type
 
-recalc=1;
+recalc=0;
 
 set(0,'defaultAxesFontSize',20)
 set(0,'DefaultTextInterpreter', 'latex')
 set(groot, 'defaultAxesTickLabelInterpreter','latex')
 
 if recalc>0
+    
 
 % 0) Set some parameters
 n=2000; % number of discretisation setps
@@ -18,16 +19,18 @@ nExVec=numel(pExVec);
 
 
 sampleVec=[1000,2000,10000]; % sizes of sampled networks
-%sampleVec=[100,1000]; % sizes of sampled networks
+%sampleVec=[1000,2000]; % sizes of sampled networks
 nSample=numel(sampleVec);
 
 nviGraphon = zeros(nExVec,1);
 nviGraph = zeros(nExVec,nSample);
 nviEstimated = zeros(nExVec,nSample);
 
-parfor i=1:nExVec
+for i=1:nExVec
 
     pEx = pExVec(i)
+    disp('external connection probability')
+    disp(pEx)
     
     % 1) Set up a graphon
     [W,plantedPartition] = PlantedPartitionGraphon(n,pIn,pEx,K);
@@ -55,9 +58,11 @@ parfor i=1:nExVec
         
         
         % graphon estimation from sampled graph
-        
+        disp('start estimation')
         % community detection on estimated graphon
         W_estimated = Method_matrix_completion(full(G));
+        %W_estimated = Method_chatterjee(full(G));
+        disp('estimation finished')
         [B_estimated] = modularityGraphon(W_estimated);
         [S_estimated,Q_estimated] = genlouvain(B_estimated);
         
@@ -79,12 +84,14 @@ plot(pExVec,nviGraph(:,i),'LineWidth',2,'LineStyle',':','Color',cmap(i,:))
 plot(pExVec,nviEstimated(:,i),'LineWidth',2,'LineStyle','--','Color',cmap(i,:))
 end
 hold off
-text(0.015,0.3,'$N=1\,000$','rotation',90,'Color',cmap(1,:),'FontSize',20)
-text(0.032,0.3,'$N=2\,000$','rotation',90,'Color',cmap(2,:),'FontSize',20)
-text(0.044,0.3,'$N=10\,000$','rotation',90,'Color',cmap(nSamples,:),'FontSize',20)
+text(0.015,0.6,'$N=1\,000$','rotation',90,'Color',cmap(1,:),'FontSize',20)
+text(0.032,0.6,'$N=2\,000$','rotation',90,'Color',cmap(2,:),'FontSize',20)
+text(0.042,0.6,'$N=10\,000$','rotation',90,'Color',cmap(nSamples,:),'FontSize',20)
 xlabel('external connection probability, $p_{\mathrm{ex}}$')
-ylabel('NVI')
-l=legend('graphon','sampled graph','estimated graphon','location','NorthWest');
+ylim([0,1])
+ylabel('AMI')
+l=legend('graphon','sampled graph','estimated graphon','location','SouthWest');
 set(l,'Interpreter','latex')
+
 
 

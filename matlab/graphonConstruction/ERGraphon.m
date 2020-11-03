@@ -1,5 +1,5 @@
 function [W] = ERGraphon(n,density)
-%Lambda graphon
+%ER (Erdos--Renyi) graphon
 % Input: 
 %           n - number of `nodes' (discretisation)
 %           density - density parameter float in (0,1)
