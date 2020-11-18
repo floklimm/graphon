@@ -1,30 +1,23 @@
-% Community detection in Lambda graphon
+% community detection for max graphon
 
 % 0) Set some parameters
-n=2000; % number of discretisation steps
-lambda=0.2; % lambda parameter in [0,1]
+n=2000;
 
-%b) for plotting
+% 1) Set up a graphon
+[W] = maxGraphon(n);
 
-set(0,'defaultAxesFontSize',20)
-set(0,'DefaultTextInterpreter', 'latex')
-set(groot, 'defaultAxesTickLabelInterpreter','latex')
-
-
-% 1) Construct a graphon
-[W] = LambdaGraphon(n,lambda);
 
 % 2) Community detection on it
 % a) compute the modularity matrix
 [B] = modularityGraphon(W);
 
-% b) find the optimal group structure with the GenLouvain algorithm
+% b) find the optimal group structure
 [S,Q] = genlouvain(B);
 Q = Q/sum(sum(W))
 
-
 % 3) Compute the degree
 degree = graphonDegree(W);
+
 
 % 4) Plotting
 figure('Color',[1 1 1],'Position',[ 1, 1, 1000,600])
@@ -95,3 +88,4 @@ ylabel('x','interpreter','latex')
 xlabel('community g(x)','interpreter','latex')
 set(gca, 'YDir','reverse')
 axis square
+

@@ -1,27 +1,23 @@
-% Community detection in Lambda graphon
+% community detection in graphons that are SBM-type
 
 % 0) Set some parameters
-n=2000; % number of discretisation steps
-lambda=0.2; % lambda parameter in [0,1]
-
-%b) for plotting
-
-set(0,'defaultAxesFontSize',20)
-set(0,'DefaultTextInterpreter', 'latex')
-set(groot, 'defaultAxesTickLabelInterpreter','latex')
+n=2000;
+pIn = 0.2;
+pEx=0.01;
+K=3;
 
 
-% 1) Construct a graphon
-[W] = LambdaGraphon(n,lambda);
+% 1) Set up a graphon
+[W] = PlantedPartitionGraphon(n,pIn,pEx,K);
+
 
 % 2) Community detection on it
 % a) compute the modularity matrix
 [B] = modularityGraphon(W);
 
-% b) find the optimal group structure with the GenLouvain algorithm
+% b) find the optimal group structure
 [S,Q] = genlouvain(B);
 Q = Q/sum(sum(W))
-
 
 % 3) Compute the degree
 degree = graphonDegree(W);
@@ -95,3 +91,4 @@ ylabel('x','interpreter','latex')
 xlabel('community g(x)','interpreter','latex')
 set(gca, 'YDir','reverse')
 axis square
+
