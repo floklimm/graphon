@@ -1,5 +1,5 @@
 # graphon
-Matlab library for community detection in graphons with additional Mathematica notebooks to demonstrate analytical approaches for modularity maximisation for graphons.
+Matlab library for community detection for graphons with additional Mathematica notebooks to demonstrate analytical approaches for modularity maximisation for graphons.
 
 This code accompanies the paper "Modularity maximisation for graphons" by Florian Klimm, Nick S. Jones, and Michael T. Schaub.
 
