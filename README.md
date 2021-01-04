@@ -5,7 +5,7 @@ This code accompanies the paper "Modularity maximisation for community detection
 
 You can find a preprint of this paper on arXiv.
 
-![image info](./matlab/paperReproduction/figures/fig3_lambdaGraphon.png)
+![image info](./matlab/paperReproduction_v2/figures/fig3_lambdaGraphon.png)
 
 ## Prerequisites
 - Matlab (tested for version R2020a)
