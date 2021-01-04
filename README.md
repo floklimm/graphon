@@ -1,7 +1,7 @@
 # graphon
 Matlab library for community detection in graphons
 
-This code accompanies the paper "Modularity maximisation for community detection in graphons" by Florian Klimm, Nick S. Jones, and Michael T. Schaub.
+This code accompanies the paper "Modularity maximisation for graphons" by Florian Klimm, Nick S. Jones, and Michael T. Schaub.
 
 You will soon find a preprint of this paper on arXiv.
 
