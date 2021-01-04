@@ -1,6 +1,10 @@
 % community detection in graphons that are SBM-type
+% We compare the recovery of the planted partitions with two approaches
+% 1) Modularity maximisation of the sampled graph
+% 2) Modularity maximisation of the graphon, which we estimated from the
+% sampled graph
 
-recalc=0;
+recalc=1;
 
 set(0,'defaultAxesFontSize',20)
 set(0,'DefaultTextInterpreter', 'latex')
@@ -19,8 +23,8 @@ nExVec=numel(pExVec);
 
 % estimation can be slow for 10,000 nodes, therefore we suggest you run it
 % for 1000 and 2000, first.
-sampleVec=[1000,2000,10000]; % sizes of sampled networks
-%sampleVec=[1000,2000]; % sizes of sampled networks
+%sampleVec=[1000,2000,10000]; % sizes of sampled networks
+sampleVec=[1000,2000]; % sizes of sampled networks
 nSample=numel(sampleVec);
 
 nviGraphon = zeros(nExVec,1);
@@ -42,7 +46,7 @@ for i=1:nExVec
     [S,Q] = genlouvain(B);
     Q = Q/sum(sum(W));
 
-
+    % compute the adjusted mutual i information
     nviGraphon(i) = ami(S,plantedPartition);
 
 
