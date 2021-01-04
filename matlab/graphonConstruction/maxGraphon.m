@@ -1,5 +1,5 @@
 function [W] = maxGraphon(n)
-%GrownGraphon: W = 1-x*y;
+%MaxGraphon: W = 1-x*y;
 % Input:
 %           n - number of `nodes' (discretisation)
 
