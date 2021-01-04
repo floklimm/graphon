@@ -3,7 +3,7 @@ Matlab library for community detection in graphons
 
 This code accompanies the paper "Modularity maximisation for community detection in graphons" by Florian Klimm, Nick S. Jones, and Michael T. Schaub.
 
-You can find a preprint of this paper on arXiv.
+You will soon find a preprint of this paper on arXiv.
 
 ![image info](./matlab/paperReproduction_v2/figures/fig3_lambdaGraphon.png)
 
@@ -23,7 +23,7 @@ The code to construct synthetic graphons is available in `/matlab/graphonConstru
 
 Different graphon metrics are available under `/matlab/graphonFunctions`.
 
-Some helper functions (e.g., for plotting) are under `/matlab/helperFunctions`.
+Some helper functions (e.g., colourmaps for plotting) are under `/matlab/helperFunctions`.
 
 ### Mathematica
 
