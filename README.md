@@ -15,7 +15,26 @@ You will soon find a preprint of this paper on arXiv.
 ## How-to
 
 ### Matlab
-The code in the library allows you to construct synthetic graphons and use a modularity-maximisation algorithm to detect community structure in them. It also has some examples of graphons estimated from empirical network data.
+The code in the library allows you to construct synthetic graphons and use a modularity-maximisation algorithm to detect their community structure.
+
+The simplest use case is
+```Matlab
+%% Community detection for synthetic graphon
+% 0) Set some parameters
+n=2000; % number of discretisation steps
+lambda=0.2; % lambda parameter in [0,1]
+
+% 1) Construct a graphon
+[W] = LambdaGraphon(n,lambda);
+
+% 2) Community detection on it
+% a) compute the modularity matrix
+[B] = modularityGraphon(W);
+
+% b) find the optimal group structure with the GenLouvain algorithm
+[S,Q] = genlouvain(B);
+Q = Q/sum(sum(W))
+```
 
 To reproduce the figures in the manuscript, see folder `/matlab/paperReproduction`.
 
