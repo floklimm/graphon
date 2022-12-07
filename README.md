@@ -2,6 +2,7 @@
 Matlab library that allows community detection for graphons with additional Mathematica notebooks to demonstrate analytical approaches for modularity maximisation for graphons.
 
 This code accompanies the paper "Modularity maximisation for graphons" by Florian Klimm, Nick S. Jones, and Michael T. Schaub.
+Published in the SIAM Journal on Applied Mathematics [Link](https://doi.org/10.1137/22M1492003) 
 [preprint](https://arxiv.org/abs/2101.00503)
 
 ![image info](./matlab/paperReproduction/figures/fig3_lambdaGraphon.png)
